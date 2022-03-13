@@ -1,0 +1,41 @@
+# 访问路径、端口tomcat start
+server:
+  port: 9090
+  servlet:
+    context-path: /multiple
+  tomcat:
+    max-threads: 1000
+    min-spare-threads: 30
+    uri-encoding: UTF-8
+
+spring:
+  application:
+    name: multiple
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  jackson:
+    date-format: yyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  favicon:
+    enabled: false
+  datasource:
+    d1:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://xxx:3306/d1?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
+      username:
+      password:
+      type: com.zaxxer.hikari.HikariDataSource
+    d2:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://xxx:3306/d2?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
+      username: 
+      password:
+      type: com.zaxxer.hikari.HikariDataSource
+
+mybatis:
+  mapperLocations: classpath*:mysql/*Mapper.xml
+
+

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaohuan.dao.UserLogMappper">
+    <insert id="addUserLog" parameterType="com.xiaohuan.bean.UserLog" flushCache="true">
+        INSERT INTO
+            user_log (user_id) VALUES
+            (#{userId})
+    </insert>
+    <update id="deleteUserLog" parameterType="java.lang.String">
+        DELETE FROM user_log WHERE
+            user_id=#{userId}
+    </update>
+</mapper>
